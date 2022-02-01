@@ -24,8 +24,9 @@ def merge_file_func(input_files,
                                 delimiter_count[count_delimiter] += 1
                             else:
                                 delimiter_count[count_delimiter] = 1
-                        print(delimiter_count)
                         first_file = 'FALSE'
+                        print(delimiter_count)
+                        delimiter_count[count_delimiter] = 0
                     else:
                         noheader = infile.readlines()[1:]
                         for line in noheader:
@@ -40,7 +41,7 @@ def merge_file_func(input_files,
                             else:
                                 delimiter_count[count_delimiter] = 1
                         print(delimiter_count)
-
+                        delimiter_count[count_delimiter] = 0
 input_files = glob.glob("C:/Python/Merge/Updated*.csv")
 merge_file = "C:/Python/Merge/Merged.csv"
 exception_file = "C:/Python/Merge/Exception.csv"
